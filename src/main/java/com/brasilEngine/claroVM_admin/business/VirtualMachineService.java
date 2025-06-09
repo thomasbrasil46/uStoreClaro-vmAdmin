@@ -30,21 +30,21 @@ public class VirtualMachineService {
     }
 
     public VirtualMachine updateById(Integer id, VirtualMachine virtualMachine){
-        VirtualMachine VirtualMachineEntity = repository.findById(id).orElseThrow(
+        VirtualMachine virtualMachineEntity = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Id não encontrado."));
 
-                if (virtualMachine.getNome != null) {
-                    VirtualMachineEntity.setNome(VirtualMachine.getNome());
+                if (virtualMachine.getNome() != null) {
+                    virtualMachineEntity.setNome(virtualMachine.getNome());
                 }
 
-                if (VirtualMachine.getMemoria() != null){
-                    VirtualMachineEntity.setMemoria(VirtualMachine.getMemoria());
+                if (virtualMachine.getMemoria() != null){
+                    virtualMachineEntity.setMemoria(virtualMachine.getMemoria());
                 }
 
-                if (VirtualMachine.getDisco() != null){
-                    VirtualMachineEntity.setDisco(VirtualMachine.getDisco());
+                if (virtualMachine.getDisco() != null){
+                    virtualMachineEntity.setDisco(virtualMachine.getDisco());
                 }
 
-                return repository.saveAndFlush(VirtualMachineEntity);
+                return repository.saveAndFlush(virtualMachineEntity);
     }
 }

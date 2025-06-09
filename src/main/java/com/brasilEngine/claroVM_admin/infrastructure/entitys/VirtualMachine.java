@@ -23,10 +23,10 @@ public class VirtualMachine {
     private String nome;
 
     @Column(name = "VMmemory", nullable = false)
-    private double memoria;
+    private Double memoria;
 
     @Column(name = "VMdisc", nullable = false)
-    private double disco;
+    private Double disco;
 
     @CreationTimestamp
     @Column(updatable = false)
