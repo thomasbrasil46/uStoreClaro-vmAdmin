@@ -41,6 +41,10 @@ public class VirtualMachineService {
                     virtualMachineEntity.setMemoria(virtualMachine.getMemoria());
                 }
 
+                if (virtualMachine.getCpu() != null) {
+                    virtualMachineEntity.setCpu(virtualMachine.getCpu());
+                }
+
                 if (virtualMachine.getDisco() != null){
                     virtualMachineEntity.setDisco(virtualMachine.getDisco());
                 }

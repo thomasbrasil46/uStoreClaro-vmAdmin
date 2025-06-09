@@ -1,6 +1,7 @@
 package com.brasilEngine.claroVM_admin.infrastructure.entitys;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -20,7 +21,11 @@ public class VirtualMachine {
     private Integer id;
 
     @Column(name = "VMname", unique = true, nullable = false)
+    @Size(min = 5, message = "O campo nome deve ter no mínimo cinco caracteres.")
     private String nome;
+
+    @Column(name = "VMcpu", nullable = false)
+    private Integer cpu;
 
     @Column(name = "VMmemory", nullable = false)
     private Double memoria;
